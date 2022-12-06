@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/RESTfull.Domain.csproj": {}
+  },
+  "projects": {
+    "/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/RESTfull.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/RESTfull.Domain.csproj",
+        "projectName": "RESTfull.Domain",
+        "projectPath": "/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/RESTfull.Domain.csproj",
+        "packagesPath": "/home/tvo-po/.nuget/packages/",
+        "outputPath": "/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tvo-po/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/tvo-po/.dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
