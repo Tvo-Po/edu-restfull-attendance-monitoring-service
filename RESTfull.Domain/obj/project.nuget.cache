@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UafjKdi9oQUUjXknnsNBVe7KpZy+GFbOfmV2awumhM56Ty+5Ve3MEpt+oXnxubeMfW0Eaj8xWmH+sBZt96xJ7g==",
+  "dgSpecHash": "e05nnLxRo9KYxm5RPhCGwiJbDh3NkMc+gA9/P/P4HoUQamSAHgX9FYSywMg3I027fa+l+BHBulJcNPUA2WSk2A==",
   "success": true,
   "projectFilePath": "/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/RESTfull.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/tvo-po/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.0/microsoft.aspnetcore.app.ref.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

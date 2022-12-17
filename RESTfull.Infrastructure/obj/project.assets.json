@@ -559,6 +559,16 @@
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
+      },
+      "RESTfull.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/RESTfull.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RESTfull.Domain.dll": {}
+        }
       }
     }
   },
@@ -1288,13 +1298,19 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "RESTfull.Domain/1.0.0": {
+      "type": "project",
+      "path": "../RESTfull.Domain/RESTfull.Domain.csproj",
+      "msbuildProject": "../RESTfull.Domain/RESTfull.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.EntityFrameworkCore >= 7.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.0",
-      "Microsoft.EntityFrameworkCore.Tools >= 7.0.0"
+      "Microsoft.EntityFrameworkCore.Tools >= 7.0.0",
+      "RESTfull.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1321,7 +1337,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/RESTfull.Domain.csproj": {
+              "projectPath": "/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/RESTfull.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

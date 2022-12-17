@@ -1,0 +1,12 @@
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/bin/Debug/net7.0/RESTfull.Domain.deps.json
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/bin/Debug/net7.0/RESTfull.Domain.dll
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/bin/Debug/net7.0/RESTfull.Domain.pdb
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/obj/Debug/net7.0/RESTfull.Domain.csproj.AssemblyReference.cache
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/obj/Debug/net7.0/RESTfull.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/obj/Debug/net7.0/RESTfull.Domain.AssemblyInfoInputs.cache
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/obj/Debug/net7.0/RESTfull.Domain.AssemblyInfo.cs
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/obj/Debug/net7.0/RESTfull.Domain.csproj.CoreCompileInputs.cache
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/obj/Debug/net7.0/RESTfull.Domain.dll
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/obj/Debug/net7.0/refint/RESTfull.Domain.dll
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/obj/Debug/net7.0/RESTfull.Domain.pdb
+/home/tvo-po/_Studying/4-th_year/7_semester/subject-oriented-design-of-automated-control-systems/RESTfull/RESTfull.Domain/obj/Debug/net7.0/ref/RESTfull.Domain.dll
