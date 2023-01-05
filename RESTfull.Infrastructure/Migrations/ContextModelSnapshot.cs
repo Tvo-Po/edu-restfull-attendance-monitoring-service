@@ -29,16 +29,16 @@ namespace RESTfull.Infrastructure.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid>("StudentId")
+                    b.Property<Guid>("StudyUserId")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ClassId");
 
-                    b.HasIndex("StudentId");
+                    b.HasIndex("StudyUserId");
 
-                    b.ToTable("Attending");
+                    b.ToTable("Attendings");
                 });
 
             modelBuilder.Entity("RESTfull.Domain.Model.Class", b =>
@@ -106,15 +106,15 @@ namespace RESTfull.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RESTfull.Domain.Model.User", "Student")
+                    b.HasOne("RESTfull.Domain.Model.User", "StudyUser")
                         .WithMany("Attendings")
-                        .HasForeignKey("StudentId")
+                        .HasForeignKey("StudyUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Class");
 
-                    b.Navigation("Student");
+                    b.Navigation("StudyUser");
                 });
 
             modelBuilder.Entity("RESTfull.Domain.Model.Class", b =>

@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RESTfull.Domain.Model;
 
-
 public enum UserType
 {
     Administrator = 1,

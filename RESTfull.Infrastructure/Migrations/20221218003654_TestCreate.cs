@@ -47,40 +47,40 @@ namespace RESTfull.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Attending",
+                name: "Attendings",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    StudentId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    StudyUserId = table.Column<Guid>(type: "TEXT", nullable: false),
                     ClassId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Status = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Attending", x => x.Id);
+                    table.PrimaryKey("PK_Attendings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Attending_Classes_ClassId",
+                        name: "FK_Attendings_Classes_ClassId",
                         column: x => x.ClassId,
                         principalTable: "Classes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Attending_Users_StudentId",
-                        column: x => x.StudentId,
+                        name: "FK_Attendings_Users_StudyUserId",
+                        column: x => x.StudyUserId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Attending_ClassId",
-                table: "Attending",
+                name: "IX_Attendings_ClassId",
+                table: "Attendings",
                 column: "ClassId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Attending_StudentId",
-                table: "Attending",
-                column: "StudentId");
+                name: "IX_Attendings_StudyUserId",
+                table: "Attendings",
+                column: "StudyUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Classes_Group_Start",
@@ -99,7 +99,7 @@ namespace RESTfull.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Attending");
+                name: "Attendings");
 
             migrationBuilder.DropTable(
                 name: "Classes");

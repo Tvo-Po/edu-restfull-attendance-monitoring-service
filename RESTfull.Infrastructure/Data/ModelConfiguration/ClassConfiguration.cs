@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RESTfull.Domain.Model;
 
 namespace RESTfull.Infrastructure.Data.ModelConfiguration;
+
 public class ClassConfiguration : IEntityTypeConfiguration<Class>
 {
     public void Configure(EntityTypeBuilder<Class> builder)

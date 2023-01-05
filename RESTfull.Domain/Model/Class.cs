@@ -7,8 +7,8 @@ public class Class
 {
     public Guid Id { get; set; }
     public required string Subject { get; set; }
+    
     public Guid TeacherId { get; set; }
-
     [ForeignKey(nameof(TeacherId))]
     public required User Teacher { get; set; }
 
