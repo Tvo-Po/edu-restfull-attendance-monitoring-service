@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfull.Infrastructure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfull.Infrastructure.Tests", "RESTfull.Infrastructure.Tests\RESTfull.Infrastructure.Tests.csproj", "{112D83F8-7983-4711-93EB-CCA5E57D5466}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfull.Front", "RESTfull.Front\RESTfull.Front.csproj", "{6FA4E76A-438D-4DF8-A48F-44134F76104B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{112D83F8-7983-4711-93EB-CCA5E57D5466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{112D83F8-7983-4711-93EB-CCA5E57D5466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{112D83F8-7983-4711-93EB-CCA5E57D5466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA4E76A-438D-4DF8-A48F-44134F76104B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA4E76A-438D-4DF8-A48F-44134F76104B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA4E76A-438D-4DF8-A48F-44134F76104B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA4E76A-438D-4DF8-A48F-44134F76104B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
