@@ -3,11 +3,11 @@ using RESTfull.Domain.Model;
 
 namespace RESTfull.Infrastructure.Repository;
 
-public struct UserAttending
+public class UserAttending
 {
-    public required string Subject;
-    public DateTime SubjectStart;
-    public AttendingStatus Status;
+    public required string Subject { get; set; }
+    public DateTime SubjectStart { get; set; }
+    public AttendingStatus Status { get; set; }
 }
 
 public class UserAttendingsRepository : BaseRepository
@@ -43,7 +43,7 @@ public class UserAttendingsRepository : BaseRepository
                             }
                         )
                         .Where(
-                            fullResult => fullResult.UserId == userId &&
+                            fullResult => fullResult.UserId.ToString() == userId.ToString() &&
                                           fullResult.Start.Year == year &&
                                           fullResult.Start.Month == month
                         )
