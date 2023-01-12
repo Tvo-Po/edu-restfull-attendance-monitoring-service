@@ -22,7 +22,7 @@
         break;
     case @Stage.DateChoosing:
         <label for="date">Attendence date:</label>
-        <input type="month" id="date" name="date" min="@minYear" max="@currentYear" @bind="pickedDate">
+        <input type="month" id="date" name="date" min="@minYear" max="@maxYear" @bind="pickedDate">
         <button type="button" class="btn btn-primary" @onclick="GetAttendings">Retrieve</button>
         break;
     case @Stage.SuccessAttendingRetrieving:
@@ -86,9 +86,9 @@
     private IEnumerable<string> subjects = Array.Empty<string>();
     private bool hasErrors;
     private Stage stage;
-    private DateTime pickedDate;
+    private DateTime pickedDate = DateTime.Now;
     private readonly string minYear = $"{DateTime.Now.Year - 4}-01";
-    private readonly string currentYear = $"{DateTime.Now.Year}-12";
+    private readonly string maxYear = $"{DateTime.Now.Year}-12";
 
 
     protected override async Task OnInitializedAsync()
