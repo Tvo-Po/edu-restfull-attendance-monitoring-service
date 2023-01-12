@@ -1,4 +1,11 @@
 ﻿@page "/user-attendings"
+@using Microsoft.Extensions.Configuration
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using RESTfull.Front.Data
+@inject IConfiguration Configuration
+@inject IHttpClientFactory ClientFactory
+@inject UserGuidContainer userGuidContainer
 
 <PageTitle>User attendings</PageTitle>
 
@@ -6,26 +13,133 @@
 
 <p>Display user attendings for chosen month.</p>
 
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Subject №1</th>
-            <th>Subject №2</th>
-            <th>Subject №3</th>
-            <th>Subject №4</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+@switch(stage)
+{
+    case @Stage.Unauthorized:
+        <div class="alert alert-danger" role="alert">
+            You must login for retrieving attendence!
+        </div>
+        break;
+    case @Stage.DateChoosing:
+        <label for="date">Attendence date:</label>
+        <input type="month" id="date" name="date" min="@minYear" max="@currentYear" @bind="pickedDate">
+        <button type="button" class="btn btn-primary" @onclick="GetAttendings">Retrieve</button>
+        break;
+    case @Stage.SuccessAttendingRetrieving:
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Date</th>
+                @foreach(var subject in subjects)
+                {
+                    <th>@subject</th>
+                }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var sameDateAttendings in attendings.GroupBy(a => a.SubjectStart.Date))
+                {
+                    <tr>
+                        <td>@sameDateAttendings.ToList()[0].SubjectStart.ToString("dd.MM.yyyy")</td>
+                        @foreach(var subject in subjects)
+                        {
+                            var subjectAttending = sameDateAttendings.Where(a => a.Subject == subject)
+                                                                     .FirstOrDefault();
+                            @if (subjectAttending is not null)
+                            {
+                                <td class="@GetCellColor(subjectAttending.Status)"></td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+        break;
+    default:
+        <div class="alert alert-danger" role="alert">
+            Something went wrong.
+        </div>
+        break;
+}
 
 @code {
+    public enum Stage
+    {
+        Unauthorized = 1,
+        DateChoosing = 2,
+        SuccessAttendingRetrieving = 3,
+    }
+    public class UserAttending
+    {
+        [JsonPropertyName("subject")]
+        public required string Subject { get; set; }
+        [JsonPropertyName("subjectStart")]
+        public DateTime SubjectStart { get; set; }
+        [JsonPropertyName("status")]
+        public uint Status { get; set; }
+    }
+    private IEnumerable<UserAttending> attendings = Array.Empty<UserAttending>();
+    private IEnumerable<string> subjects = Array.Empty<string>();
+    private bool hasErrors;
+    private Stage stage;
+    private DateTime pickedDate;
+    private readonly string minYear = $"{DateTime.Now.Year - 4}-01";
+    private readonly string currentYear = $"{DateTime.Now.Year}-12";
 
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (userGuidContainer.Id is null)
+        {
+            stage = Stage.Unauthorized;
+        }
+        else
+        {
+            stage = Stage.DateChoosing;
+        }
+    }
+
+    protected async Task GetAttendings()
+    {
+        var api = Configuration.GetConnectionString("API");
+        var userId = userGuidContainer.Id;
+        var request = new HttpRequestMessage(
+            HttpMethod.Get,
+            $"{api}UserAttendings?userId={userId}&year={pickedDate.Year}&month={pickedDate.Month}"
+        );
+        request.Headers.Add("Accept", "application/json");
+        var client = ClientFactory.CreateClient();
+        var response = await client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            using var responseStream = await response.Content.ReadAsStreamAsync();
+            attendings = await JsonSerializer.DeserializeAsync
+                 <IEnumerable<UserAttending>>(responseStream);
+            subjects = attendings.DistinctBy(a => a.Subject)
+                                 .OrderBy(a => a.Subject)
+                                 .Select(a => a.Subject);
+            stage = Stage.SuccessAttendingRetrieving;
+        }
+    }
+
+    protected string GetCellColor(uint status)
+    {
+        switch (status)
+        {
+            case 1:
+                return "bg-light";
+            case 2:
+                return "bg-danger";
+            case 3:
+                return "bg-secondary";
+            case 4:
+                return "bg-success";
+            default:
+                return "bg-warning";
+        }
+    }
 }

@@ -38,6 +38,34 @@ a, .btn-link {
     color: red;
 }
 
+.login-btn {
+    padding: 10px 8px;
+    margin-left: auto;
+    margin-right:5px;
+    margin-top: 2px;
+    border-radius: 3px;
+    transition: background-color .15s ease-in-out;
+  }
+
+.login-btn:hover {
+    background-color: rgba(29, 25, 36, 0.274);
+    cursor: pointer;
+}
+
+.logout-btn {
+    padding: 10px 14px 10px 6px;
+    margin-left: auto;
+    margin-right: -18px;
+    margin-top: 2px;
+    border-radius: 3px;
+    transition: background-color .15s ease-in-out;
+  }
+
+.logout-btn:hover {
+    background-color: rgba(29, 25, 36, 0.274);
+    cursor: pointer;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
